@@ -1,0 +1,8 @@
+AzureDiagnostics
+| where TimeGenerated between (datetime(2022-11-17) .. datetime(2022-12-18))
+| where database_name_s == 'App_StarRoleAssign'
+| where server_principal_name_s <> "luke.mcconnell@lbmc.com"
+| where database_name_s == "App_StarRoleAssign"
+// | where succeeded_s == false
+// | where statement_s like "create proc usp_getdate As begin Select '1' End"
+// | distinct client_ip_s, server_principal_name_s, server_principal_id_d, application_name_s, statement_s, succeeded_s
